@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cgoog4htymtte"]
+
+[ext_resource type="Texture2D" uid="uid://0shwwwc0bi5b" path="res://assets/Gemini_Generated_Image_cyydrscyydrscyyd.jpeg" id="1_mk4g1"]
+[ext_resource type="Texture2D" uid="uid://bidqailgm7p1g" path="res://assets/36cb406532ca909724daffd01f08ba27.jpg" id="2_iep14"]
+[ext_resource type="Texture2D" uid="uid://bs4hy1gxead8m" path="res://assets/Code_Generated_Image.png" id="3_iep14"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa1tu"]
+texture = ExtResource("2_iep14")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kni6g"]
+texture = ExtResource("2_iep14")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nx6e2"]
+texture = ExtResource("2_iep14")
+
+[node name="Menu principal" type="Control" unique_id=1229676687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo" type="TextureRect" parent="." unique_id=187970117]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 49.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mk4g1")
+expand_mode = 1
+
+[node name="ContenedorBotones" type="VBoxContainer" parent="." unique_id=425485748]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 329.0
+offset_right = 673.0
+offset_bottom = 454.0
+theme_override_constants/separation = 10
+
+[node name="BotonJugar" type="Button" parent="ContenedorBotones" unique_id=919231400]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8750814, 0.99382055, 0.8750814, 0.943)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxTexture_fa1tu")
+text = "JUGAR
+"
+
+[node name="BotonComoJugar" type="Button" parent="ContenedorBotones" unique_id=1907277547]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxTexture_kni6g")
+text = "Como Jugar
+"
+
+[node name="BotonOpciones" type="Button" parent="ContenedorBotones" unique_id=1530380736]
+custom_minimum_size = Vector2(150, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxTexture_nx6e2")
+text = "Ajustes
+"
+
+[node name="TituloJuego" type="TextureRect" parent="." unique_id=1104950012]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 0
+offset_left = 240.0
+offset_top = 17.000002
+offset_right = 1085.0
+offset_bottom = 178.0
+scale = Vector2(0.8319855, 0.8648099)
+texture = ExtResource("3_iep14")
+expand_mode = 1
+
+[node name="BotonMusica" type="TextureButton" parent="." unique_id=1077141744]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
