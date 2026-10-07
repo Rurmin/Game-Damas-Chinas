@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cgoog4htymtte"]
 
 [ext_resource type="Texture2D" uid="uid://0shwwwc0bi5b" path="res://assets/Gemini_Generated_Image_cyydrscyydrscyyd.jpeg" id="1_mk4g1"]
+[ext_resource type="Script" uid="uid://fcspv6hwiemu" path="res://scripts/menu_principal.gd" id="1_qcl6i"]
 [ext_resource type="Texture2D" uid="uid://bidqailgm7p1g" path="res://assets/36cb406532ca909724daffd01f08ba27.jpg" id="2_iep14"]
 [ext_resource type="Texture2D" uid="uid://bs4hy1gxead8m" path="res://assets/Code_Generated_Image.png" id="3_iep14"]
+[ext_resource type="Texture2D" uid="uid://8xay81pg5yfd" path="res://assets/images-removebg-preview.png" id="4_w5ui5"]
+[ext_resource type="Texture2D" uid="uid://db04f0ws7crxd" path="res://assets/Gemini_Generated_Image_qroeghqroeghqroe-removebg-preview.png" id="5_qcl6i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa1tu"]
 texture = ExtResource("2_iep14")
@@ -13,6 +16,9 @@ texture = ExtResource("2_iep14")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nx6e2"]
 texture = ExtResource("2_iep14")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2w68d"]
+texture = ExtResource("2_iep14")
+
 [node name="Menu principal" type="Control" unique_id=1229676687]
 layout_mode = 3
 anchors_preset = 15
@@ -20,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qcl6i")
 
 [node name="fondo" type="TextureRect" parent="." unique_id=187970117]
 layout_mode = 1
@@ -83,7 +90,83 @@ scale = Vector2(0.8319855, 0.8648099)
 texture = ExtResource("3_iep14")
 expand_mode = 1
 
-[node name="BotonMusica" type="TextureButton" parent="." unique_id=1077141744]
+[node name="BotonMusica" type="TextureButton" parent="." unique_id=1449927301]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1073.0
+offset_top = 574.99994
+offset_right = 1918.0
+offset_bottom = 1883.0
+scale = Vector2(0.1430227, 0.12949869)
+texture_normal = ExtResource("4_w5ui5")
+ignore_texture_size = true
+
+[node name="VentanaReglas" type="Panel" parent="." unique_id=813130770]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0181019, 1.0327016)
+theme_override_styles/panel = SubResource("StyleBoxTexture_2w68d")
+
+[node name="TituloReglas" type="TextureRect" parent="VentanaReglas" unique_id=255807574]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 14.0
+offset_right = 2447.0
+offset_bottom = 462.0
+scale = Vector2(0.12573259, 0.18488787)
+texture = ExtResource("5_qcl6i")
+expand_mode = 1
+
+[node name="TextoReglas" type="RichTextLabel" parent="VentanaReglas" unique_id=1882874119]
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 0
+offset_left = 11.786644
+offset_top = 102.64341
+offset_right = 411.78665
+offset_bottom = 552.64343
+scale = Vector2(1.2002914, 1.0974033)
+theme_override_colors/default_color = Color(0.018167885, 0.018167885, 0.018167885, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "¡BIENVENIDO A DAMAS CHINAS!
+
+1. OBJETIVO DEL JUEGO
+Lleva todas tus fichas desde tu casa de origen hasta la punta opuesta del tablero.
+• ¡El primer jugador en colocar sus fichas en la casa de destino gana la partida!
+
+2. REGLAS DE MOVIMIENTO
+• Paso Simple: Mueve a una casilla vacía adyacente.
+• Salto Tradicional: Salta sobre una ficha adyacente (propia o enemiga) si la casilla posterior está vacía.
+• Encadenamiento: Puedes realizar múltiples saltos consecutivos en un solo turno.
+
+3. CASILLAS ESPECIALES
+Caer en estas casillas activa preguntas para ganar recompensas:
+• 🌟 Casilla Unidad III: Pregunta académica (+50 Monedas 🪙)
+• 🪙 Casilla Cultura General: Pregunta variada (+25 Monedas 🪙)
+• 🎁 Cofre Sorpresa: Pregunta rápida de 10s (+100 Monedas o Bonus)
+
+4. TIENDA DE POTENCIADORES
+Gasta tus monedas durante tu turno para usar ayudas:
+• 🚀 Súper Salto (30 Monedas): Salta a mayor distancia para destrabar fichas.
+• 💡 Comodín 50/50 (20 Monedas): Elimina 2 respuestas incorrectas."
+
+[node name="BotonCerrar" type="Button" parent="VentanaReglas" unique_id=660200260]
+custom_minimum_size = Vector2(30, 35)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+scale = Vector2(1, 1.118615)
+text = "X"
