@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bs4hy1gxead8m" path="res://assets/Code_Generated_Image.png" id="3_iep14"]
 [ext_resource type="Texture2D" uid="uid://8xay81pg5yfd" path="res://assets/images-removebg-preview.png" id="4_w5ui5"]
 [ext_resource type="Texture2D" uid="uid://db04f0ws7crxd" path="res://assets/Gemini_Generated_Image_qroeghqroeghqroe-removebg-preview.png" id="5_qcl6i"]
+[ext_resource type="AudioStream" uid="uid://dugwp0xfgumt7" path="res://data/arpmedia-game-game-music-577822.mp3" id="7_nxt0m"]
+[ext_resource type="Texture2D" uid="uid://ctcr3e67rs3fw" path="res://assets/Gemini_Generated_Image_3jq4c03jq4c03jq4-removebg-preview.png" id="8_2xgxd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa1tu"]
 texture = ExtResource("2_iep14")
@@ -170,3 +172,135 @@ offset_bottom = 31.0
 grow_horizontal = 0
 scale = Vector2(1, 1.118615)
 text = "X"
+
+[node name="MusicaFondo" type="AudioStreamPlayer2D" parent="." unique_id=1396541298]
+stream = ExtResource("7_nxt0m")
+volume_db = -5.821
+autoplay = true
+
+[node name="VentanaAjustes" type="TextureRect" parent="." unique_id=1892233039]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 0
+offset_left = 322.0
+offset_top = 26.0
+offset_right = 822.0
+offset_bottom = 737.0
+scale = Vector2(1.045282, 0.8811426)
+texture = ExtResource("2_iep14")
+expand_mode = 1
+
+[node name="TituloAjustes" type="TextureRect" parent="VentanaAjustes" unique_id=464143237]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.42232
+offset_top = 7.9442306
+offset_right = -134.42233
+offset_bottom = 47.94423
+grow_horizontal = 2
+scale = Vector2(8.189858, 1.9135883)
+texture = ExtResource("8_2xgxd")
+expand_mode = 1
+
+[node name="CerrarAjustes" type="Button" parent="VentanaAjustes" unique_id=1790327832]
+custom_minimum_size = Vector2(35, 45)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -18.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "X"
+
+[node name="LabelVolumen" type="Label" parent="VentanaAjustes" unique_id=1074080118]
+layout_mode = 0
+offset_left = 26.787031
+offset_top = 204.28021
+offset_right = 215.78703
+offset_bottom = 232.28021
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Volumen de Musica"
+
+[node name="SliderVolumen" type="HSlider" parent="VentanaAjustes" unique_id=1221934522]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 243.95331
+offset_top = 206.55
+offset_right = 343.9533
+offset_bottom = 222.55
+scale = Vector2(1.8838304, 1.2779573)
+
+[node name="MododeJuego" type="Label" parent="VentanaAjustes" unique_id=231413008]
+layout_mode = 0
+offset_left = 32.52711
+offset_top = 308.6901
+offset_right = 185.52711
+offset_bottom = 367.6901
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Modo de Juegos
+"
+
+[node name="OptionModo" type="OptionButton" parent="VentanaAjustes" unique_id=657021036]
+layout_mode = 0
+offset_left = 254.4768
+offset_top = 308.6901
+offset_right = 388.4768
+offset_bottom = 339.6901
+item_count = 4
+popup/item_0/text = "1 vs 1"
+popup/item_0/id = 0
+popup/item_1/text = "3 jugadores"
+popup/item_1/id = 1
+popup/item_2/text = "4 jugadores"
+popup/item_2/id = 2
+popup/item_3/text = "6 jugadores "
+popup/item_3/id = 3
+
+[node name="LabelTiempo" type="Label" parent="VentanaAjustes" unique_id=1088043081]
+layout_mode = 0
+offset_left = 32.52711
+offset_top = 440.33734
+offset_right = 206.52711
+offset_bottom = 468.33734
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tiempo por Turno"
+
+[node name="OptionTiempo" type="OptionButton" parent="VentanaAjustes" unique_id=2056752531]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.520111
+offset_top = 88.242004
+offset_right = 140.52011
+offset_bottom = 119.242004
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 4
+popup/item_0/text = "Sin Tiempo"
+popup/item_0/id = 0
+popup/item_1/text = "15 Segundo"
+popup/item_1/id = 1
+popup/item_2/text = "30 segundos"
+popup/item_2/id = 2
+popup/item_3/text = "60 segundos"
+popup/item_3/id = 3
+
+[node name="ButtonCreditos" type="Button" parent="VentanaAjustes" unique_id=1914965157]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Creditos"
