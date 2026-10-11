@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://watcpq5mn62b"]
+
+[ext_resource type="Script" uid="uid://cuay0allox2nq" path="res://scripts/tablero.gd" id="1_ot4jy"]
+
+[node name="Tablero" type="Node2D" unique_id=2136754307]
+script = ExtResource("1_ot4jy")
