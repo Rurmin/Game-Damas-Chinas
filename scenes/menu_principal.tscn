@@ -293,7 +293,7 @@ popup/item_2/id = 2
 popup/item_3/text = "60 segundos"
 popup/item_3/id = 3
 
-[node name="ButtonCreditos" type="Button" parent="VentanaAjustes" unique_id=1914965157]
+[node name="BotonCreditos" type="Button" parent="VentanaAjustes" unique_id=1914965157]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

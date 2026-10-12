@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yh7ho1p50e3b"
-valid=false
+uid="uid://eyqr7aaoahgi"
+path="res://.godot/imported/marco_titulo.png-5acbfd170783c4681e20c9766a368108.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/textura_casilla.png"
+source_file="res://assets/marco_titulo.png"
+dest_files=["res://.godot/imported/marco_titulo.png-5acbfd170783c4681e20c9766a368108.ctex"]
 
 [params]
 

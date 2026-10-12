@@ -1,21 +1,8 @@
 [gd_scene format=3 uid="uid://bt0mvvgrt5jsx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cc37w"]
-
-[sub_resource type="Gradient" id="Gradient_nxa5g"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ai7yy"]
-gradient = SubResource("Gradient_nxa5g")
-width = 40
-height = 40
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
+[ext_resource type="Script" uid="uid://nw2q21j580of" path="res://scripts/casilla.gd" id="1_ai7yy"]
 
 [node name="Casilla" type="Area2D" unique_id=2024958920]
+script = ExtResource("1_ai7yy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1446814258]
-shape = SubResource("CircleShape2D_cc37w")
-
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=367504861]
-texture = SubResource("GradientTexture2D_ai7yy")
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -13,7 +13,11 @@ config_version=5
 config/name="DamasChinas"
 run/main_scene="uid://cgoog4htymtte"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bgninp40nq3kq"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
 
 [display]
 

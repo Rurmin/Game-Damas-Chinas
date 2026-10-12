@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d0fe7fbtbc2h5"]
+
+[ext_resource type="Script" uid="uid://qw516bgdbs86" path="res://scripts/ficha.gd" id="1_nkg04"]
+
+[node name="ficha" type="Node2D" unique_id=2056061354]
+script = ExtResource("1_nkg04")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=717658269]
+scale = Vector2(0.09, 0.09)
