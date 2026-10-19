@@ -192,15 +192,6 @@ func _process(delta: float) -> void:
 	elif not tiene_limite_tiempo:
 		label_tiempo.text = "Tiempo: ∞"
 
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_M:
-			Global.monedas_jugadores[turno_actual] += 100
-			if sfx_correcto.stream: sfx_correcto.play()
-			actualizar_indicador_turno()
-		if event.keycode == KEY_V:
-			lanzar_victoria(turno_actual)
-
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if panel_pregunta.visible or cartel_victoria.visible: return
