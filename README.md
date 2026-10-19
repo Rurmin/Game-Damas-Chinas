@@ -25,7 +25,7 @@ Un juego de mesa interactivo y adaptativo desarrollado en **Godot Engine 4**, qu
 
 | Icono | Tipo de Casilla | Recompensa | Descripción |
 | :---: | :--- | :---: | :--- |
-| 🌟 | **Unidad III (Estrellas)** | **+50 M** | Retos sobre Teoría de Conteo, Permutaciones, Combinaciones y Variaciones. |
+| 🌟 | **Estrellas** | **+50 M** | Retos sobre Teoría de Conteo, Permutaciones, Combinaciones y Variaciones. |
 | 📘 | **Cultura General** | **+25 M** | Preguntas variadas de ciencia, historia, arte y geografía. |
 | 🎁 | **Cofre Sorpresa** | **Premio Aleatorio** | Al acertar, otorga al azar **+120 Monedas**, **+50 M y 1 Súper Salto GRATIS** o **+60 M y 1 Doble Jugada GRATIS**. |
 
