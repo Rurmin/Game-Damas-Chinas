@@ -7,6 +7,7 @@ extends Control
 @onready var boton_opciones = $ContenedorBotones/BotonOpciones
 @onready var boton_cerrar_reglas = $VentanaReglas/BotonCerrar
 @onready var musica_fondo = $MusicaFondo
+@onready var boton_salir = $BotonMusica
 
 @onready var boton_cerrar_ajustes = $VentanaAjustes/CerrarAjustes
 @onready var titulo_ajustes = $VentanaAjustes/TituloAjustes
@@ -41,6 +42,7 @@ func _ready():
 	if boton_cerrar_reglas: boton_cerrar_reglas.pressed.connect(_on_boton_cerrar_reglas_pressed)
 	if boton_cerrar_ajustes: boton_cerrar_ajustes.pressed.connect(_on_boton_cerrar_ajustes_pressed)
 	if boton_creditos: boton_creditos.pressed.connect(_on_boton_creditos_pressed)
+	if boton_salir: boton_salir.pressed.connect(func(): get_tree().quit())
 	
 	var bus_idx = AudioServer.get_bus_index("Master")
 	var volumen_actual = db_to_linear(AudioServer.get_bus_volume_db(bus_idx))

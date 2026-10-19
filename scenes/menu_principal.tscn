@@ -132,34 +132,32 @@ expand_mode = 1
 [node name="TextoReglas" type="RichTextLabel" parent="VentanaReglas" unique_id=1882874119]
 custom_minimum_size = Vector2(400, 450)
 layout_mode = 0
-offset_left = 11.786644
-offset_top = 102.64341
-offset_right = 411.78665
-offset_bottom = 552.64343
-scale = Vector2(1.2002914, 1.0974033)
-theme_override_colors/default_color = Color(0.018167885, 0.018167885, 0.018167885, 1)
-theme_override_font_sizes/normal_font_size = 16
+offset_left = 18.0
+offset_top = 98.0
+offset_right = 412.0
+offset_bottom = 548.0
+scale = Vector2(1.18, 1.08)
+theme_override_colors/default_color = Color(0.05, 0.03, 0.01, 1)
+theme_override_font_sizes/normal_font_size = 15
 text = "¡BIENVENIDO A DAMAS CHINAS!
 
-1. OBJETIVO DEL JUEGO
-Lleva todas tus fichas desde tu casa de origen hasta la punta opuesta del tablero.
-• ¡El primer jugador en colocar sus fichas en la casa de destino gana la partida!
+1. OBJETIVO (¡CARRERA SIN CAPTURAS!)
+• Lleva tus 10 fichas hasta la punta opuesta iluminada con anillos de tu color.
 
-2. REGLAS DE MOVIMIENTO
-• Paso Simple: Mueve a una casilla vacía adyacente.
-• Salto Tradicional: Salta sobre una ficha adyacente (propia o enemiga) si la casilla posterior está vacía.
-• Encadenamiento: Puedes realizar múltiples saltos consecutivos en un solo turno.
+2. ¿CÓMO MOVERTE?
+• Paso Simple: Avanza a una casilla vacía vecina (marcada en verde) y termina tu turno.
+• Salto en Cadena: Salta por encima de cualquier ficha vecina hacia el hoyo vacío detrás. ¡Puedes encadenar varios saltos seguidos en un mismo turno!
+• Finalizar Salto: Pulsa 'Finalizar Salto ✔' o haz clic en tu ficha cuando termines tu cadena.
 
-3. CASILLAS ESPECIALES
-Caer en estas casillas activa preguntas para ganar recompensas:
-• 🌟 Casilla Unidad III: Pregunta académica (+50 Monedas 🪙)
-• 🪙 Casilla Cultura General: Pregunta variada (+25 Monedas 🪙)
-• 🎁 Cofre Sorpresa: Pregunta rápida de 10s (+100 Monedas o Bonus)
+3. CAJAS DE PREGUNTAS
+• 🌟  Estrellas(50M): Reto de conteo y combinatoria.
+• 🪙 Cultura General (+25 M): Preguntas variadas.
+• 🎁 Cofre Sorpresa: ¡Premio aleatorio entre +120 Monedas, Súper Salto GRATIS o un TURNO EXTRA!
 
-4. TIENDA DE POTENCIADORES
-Gasta tus monedas durante tu turno para usar ayudas:
-• 🚀 Súper Salto (30 Monedas): Salta a mayor distancia para destrabar fichas.
-• 💡 Comodín 50/50 (20 Monedas): Elimina 2 respuestas incorrectas."
+4. TIENDA DE PODERES
+• 🚀 Súper Salto (30 M): Salta hasta 4 casillas de distancia (guías doradas).
+• ⚡ Doble Jugada (45 M): ¡Mueve 2 veces seguidas en el mismo turno para armar y cruzar tus propios puentes!
+• 💡 Comodín 50/50 (20 M): Elimina 2 opciones falsas en una pregunta."
 
 [node name="BotonCerrar" type="Button" parent="VentanaReglas" unique_id=660200260]
 custom_minimum_size = Vector2(30, 35)
