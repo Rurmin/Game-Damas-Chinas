@@ -9,7 +9,7 @@ var monedas_jugadores = {}
 func _ready():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	var bus_idx = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(bus_idx, -5.0)
+	AudioServer.set_bus_volume_db(bus_idx, -2.0)
 	actualizar_audio_global()
 
 func inicializar_monedas(num_activos: int):

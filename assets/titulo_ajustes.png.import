@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs4hy1gxead8m"
-path="res://.godot/imported/Code_Generated_Image.png-5cdf5b364b0dc34dc6afcd5e5d782022.ctex"
+uid="uid://ctcr3e67rs3fw"
+path="res://.godot/imported/titulo_ajustes.png-c1d35b6a98de72945e30989708384e46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Code_Generated_Image.png"
-dest_files=["res://.godot/imported/Code_Generated_Image.png-5cdf5b364b0dc34dc6afcd5e5d782022.ctex"]
+source_file="res://assets/titulo_ajustes.png"
+dest_files=["res://.godot/imported/titulo_ajustes.png-c1d35b6a98de72945e30989708384e46.ctex"]
 
 [params]
 

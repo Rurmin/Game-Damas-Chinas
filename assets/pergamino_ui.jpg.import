@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bidqailgm7p1g"
-path="res://.godot/imported/36cb406532ca909724daffd01f08ba27.jpg-338e585aa288fa612f09a1b008e4342c.ctex"
+path="res://.godot/imported/pergamino_ui.jpg-24d6578ea12db00ea4c4c04db43a9b19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/36cb406532ca909724daffd01f08ba27.jpg"
-dest_files=["res://.godot/imported/36cb406532ca909724daffd01f08ba27.jpg-338e585aa288fa612f09a1b008e4342c.ctex"]
+source_file="res://assets/pergamino_ui.jpg"
+dest_files=["res://.godot/imported/pergamino_ui.jpg-24d6578ea12db00ea4c4c04db43a9b19.ctex"]
 
 [params]
 

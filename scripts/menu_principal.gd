@@ -19,13 +19,14 @@ extends Control
 @onready var modo_juego_label = $VentanaAjustes/MododeJuego
 @onready var label_tiempo = $VentanaAjustes/LabelTiempo
 
-var tex_titulo_ajustes = preload("res://assets/Gemini_Generated_Image_3jq4c03jq4c03jq4-removebg-preview.png")
-var tex_titulo_audio = preload("res://assets/audio_titulo.png")
+var tex_titulo_ajustes = preload("res://assets/titulo_ajustes.png")
+var tex_titulo_audio = preload("res://assets/titulo_audio.png")
 
 var boton_comenzar_partida : Button = null
 var check_audio_arriba : CheckBox = null
+var label_info_creditos : Label = null
 
-# NUEVO: Referencias para selección de mapa
+# Referencias para selección de mapa
 var label_mapa : Label = null
 var option_mapa : OptionButton = null
 
@@ -33,22 +34,36 @@ func _ready():
 	if ventana_reglas: ventana_reglas.hide()
 	if ventana_ajustes: ventana_ajustes.hide()
 	
+	if boton_jugar:
+		boton_jugar.text = "JUGAR"
+		boton_jugar.pressed.connect(_on_boton_jugar_pressed)
+	if boton_como_jugar:
+		boton_como_jugar.text = "CÓMO JUGAR"
+		boton_como_jugar.pressed.connect(_on_boton_como_jugar_pressed)
 	if boton_opciones:
-		boton_opciones.text = "AUDIO"
+		boton_opciones.text = "SONIDO"
 		boton_opciones.pressed.connect(_on_boton_opciones_pressed)
 	
-	if boton_jugar: boton_jugar.pressed.connect(_on_boton_jugar_pressed)
-	if boton_como_jugar: boton_como_jugar.pressed.connect(_on_boton_como_jugar_pressed)
 	if boton_cerrar_reglas: boton_cerrar_reglas.pressed.connect(_on_boton_cerrar_reglas_pressed)
 	if boton_cerrar_ajustes: boton_cerrar_ajustes.pressed.connect(_on_boton_cerrar_ajustes_pressed)
-	if boton_creditos: boton_creditos.pressed.connect(_on_boton_creditos_pressed)
+	if boton_creditos:
+		boton_creditos.text = "Créditos"
+		boton_creditos.pressed.connect(_on_boton_creditos_pressed)
 	if boton_salir: boton_salir.pressed.connect(func(): get_tree().quit())
 	
 	var bus_idx = AudioServer.get_bus_index("Master")
 	var volumen_actual = db_to_linear(AudioServer.get_bus_volume_db(bus_idx))
 	var esta_silenciado = AudioServer.is_bus_mute(bus_idx)
 	
-	if label_volumen: label_volumen.text = "Volumen"
+	if label_volumen:
+		label_volumen.text = "Volumen General:"
+		label_volumen.add_theme_color_override("font_color", Color(0.18, 0.09, 0.04, 1))
+	if modo_juego_label:
+		modo_juego_label.text = "Modo de Juego:"
+		modo_juego_label.add_theme_color_override("font_color", Color(0.18, 0.09, 0.04, 1))
+	if label_tiempo:
+		label_tiempo.text = "Tiempo por Turno:"
+		label_tiempo.add_theme_color_override("font_color", Color(0.18, 0.09, 0.04, 1))
 	
 	if slider_volumen:
 		slider_volumen.min_value = 0.0001
@@ -59,6 +74,7 @@ func _ready():
 		
 	if option_modo:
 		option_modo.clear()
+		option_modo.custom_minimum_size = Vector2(220, 35)
 		option_modo.add_item("1 vs 1 (2 Jugadores)")
 		option_modo.add_item("3 Jugadores")
 		option_modo.add_item("4 Jugadores")
@@ -66,44 +82,59 @@ func _ready():
 
 	if option_tiempo:
 		option_tiempo.clear()
-		option_tiempo.add_item("15 segundos")
-		option_tiempo.add_item("30 segundos")
-		option_tiempo.add_item("60 segundos")
+		option_tiempo.custom_minimum_size = Vector2(220, 35)
+		option_tiempo.add_item("15 Segundos")
+		option_tiempo.add_item("30 Segundos")
+		option_tiempo.add_item("60 Segundos")
 		option_tiempo.add_item("Sin Límite")
+		option_tiempo.selected = Global.tiempo_turno_idx
 		
 	if ventana_ajustes:
 		# Botón Comenzar
 		boton_comenzar_partida = Button.new()
 		boton_comenzar_partida.text = "¡COMENZAR PARTIDA!"
-		boton_comenzar_partida.custom_minimum_size = Vector2(220, 45)
-		boton_comenzar_partida.position = Vector2(140, 435) # Bajado ligeramente
+		boton_comenzar_partida.custom_minimum_size = Vector2(240, 46)
+		boton_comenzar_partida.position = Vector2(130, 425)
+		boton_comenzar_partida.add_theme_font_size_override("font_size", 18)
 		boton_comenzar_partida.pressed.connect(_on_boton_comenzar_partida_pressed)
 		ventana_ajustes.add_child(boton_comenzar_partida)
 		
 		# Checkbox Audio
 		check_audio_arriba = CheckBox.new()
-		check_audio_arriba.text = "Desactivar Música"
-		check_audio_arriba.position = Vector2(150, 270)
-		check_audio_arriba.add_theme_color_override("font_color", Color(0, 0, 0, 1))
-		check_audio_arriba.add_theme_color_override("font_pressed_color", Color(0, 0, 0, 1))
-		check_audio_arriba.add_theme_color_override("font_hover_color", Color(0, 0, 0, 1))
+		check_audio_arriba.text = "Silenciar Todo el Audio"
+		check_audio_arriba.position = Vector2(140, 265)
+		check_audio_arriba.add_theme_font_size_override("font_size", 19)
+		check_audio_arriba.add_theme_color_override("font_color", Color(0.18, 0.09, 0.04, 1))
+		check_audio_arriba.add_theme_color_override("font_pressed_color", Color(0.18, 0.09, 0.04, 1))
+		check_audio_arriba.add_theme_color_override("font_hover_color", Color(0.3, 0.15, 0.05, 1))
 		check_audio_arriba.button_pressed = esta_silenciado 
 		check_audio_arriba.toggled.connect(_on_audio_arriba_toggled)
 		ventana_ajustes.add_child(check_audio_arriba)
 
-		# NUEVO: Texto de Selección de Mapa (y=340)
+		# Etiqueta de Créditos informativa en el panel de Audio
+		label_info_creditos = Label.new()
+		label_info_creditos.text = "Desarrollado por el Equipo de Damas Chinas\nEdición Especial — Unidad III y Cultura General"
+		label_info_creditos.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label_info_creditos.position = Vector2(40, 340)
+		label_info_creditos.custom_minimum_size = Vector2(420, 60)
+		label_info_creditos.add_theme_font_size_override("font_size", 16)
+		label_info_creditos.add_theme_color_override("font_color", Color(0.22, 0.11, 0.04, 1))
+		label_info_creditos.hide()
+		ventana_ajustes.add_child(label_info_creditos)
+
+		# Texto de Selección de Mapa (y=340)
 		label_mapa = Label.new()
-		label_mapa.text = "Seleccionar Mapa"
+		label_mapa.text = "Escenario / Mapa:"
 		label_mapa.position = Vector2(40, 340)
 		label_mapa.add_theme_font_size_override("font_size", 20)
-		label_mapa.add_theme_color_override("font_color", Color(0.2, 0.1, 0.05, 1))
+		label_mapa.add_theme_color_override("font_color", Color(0.18, 0.09, 0.04, 1))
 		ventana_ajustes.add_child(label_mapa)
 		
-		# NUEVO: Dropdown de Selección de Mapa (y=340)
+		# Dropdown de Selección de Mapa (y=340)
 		option_mapa = OptionButton.new()
-		option_mapa.position = Vector2(220, 340)
+		option_mapa.position = Vector2(225, 336)
 		option_mapa.custom_minimum_size = Vector2(220, 35)
-		option_mapa.add_item("Atardecer")
+		option_mapa.add_item("Atardecer Imperial")
 		option_mapa.add_item("Noche Mística")
 		option_mapa.selected = Global.mapa_seleccionado
 		ventana_ajustes.add_child(option_mapa)
@@ -118,12 +149,13 @@ func mostrar_panel(modo: String):
 				titulo_ajustes.self_modulate = Color(1, 1, 1, 1)
 			if label_volumen: 
 				label_volumen.show()
-				label_volumen.position = Vector2(50, 200)
+				label_volumen.position = Vector2(40, 200)
 			if slider_volumen: 
 				slider_volumen.show()
-				slider_volumen.position = Vector2(220, 204)
+				slider_volumen.position = Vector2(230, 206)
 			if check_audio_arriba: check_audio_arriba.show()
 			if boton_creditos: boton_creditos.show()
+			if label_info_creditos: label_info_creditos.hide()
 			
 			if modo_juego_label: modo_juego_label.hide()
 			if option_modo: option_modo.hide()
@@ -141,24 +173,25 @@ func mostrar_panel(modo: String):
 			if slider_volumen: slider_volumen.hide()
 			if check_audio_arriba: check_audio_arriba.hide()
 			if boton_creditos: boton_creditos.hide()
+			if label_info_creditos: label_info_creditos.hide()
 			
 			if modo_juego_label: 
 				modo_juego_label.show()
 				modo_juego_label.position = Vector2(40, 200)
 			if option_modo: 
 				option_modo.show()
-				option_modo.position = Vector2(220, 200)
+				option_modo.position = Vector2(225, 196)
 			if label_tiempo: 
 				label_tiempo.show()
-				label_tiempo.position = Vector2(40, 270) # Ajustado arriba (antes y=300)
+				label_tiempo.position = Vector2(40, 270)
 			if option_tiempo: 
 				option_tiempo.show()
-				option_tiempo.position = Vector2(220, 270) # Ajustado arriba (antes y=300)
+				option_tiempo.position = Vector2(225, 266)
 			if label_mapa: label_mapa.show()
 			if option_mapa: option_mapa.show()
 			if boton_comenzar_partida: 
 				boton_comenzar_partida.show()
-				boton_comenzar_partida.position = Vector2(140, 420)
+				boton_comenzar_partida.position = Vector2(130, 420)
 
 func _on_boton_jugar_pressed():
 	mostrar_panel("jugar")
@@ -212,4 +245,5 @@ func _on_slider_volumen_value_changed(value: float) -> void:
 		AudioServer.set_bus_volume_db(bus_idx, linear_to_db(value))
 		
 func _on_boton_creditos_pressed():
-	print("Desarrollado por el equipo de Damas Chinas")
+	if label_info_creditos:
+		label_info_creditos.visible = not label_info_creditos.visible

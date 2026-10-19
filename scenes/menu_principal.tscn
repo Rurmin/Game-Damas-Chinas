@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cgoog4htymtte"]
 
-[ext_resource type="Texture2D" uid="uid://0shwwwc0bi5b" path="res://assets/Gemini_Generated_Image_cyydrscyydrscyyd.jpeg" id="1_mk4g1"]
+[ext_resource type="Texture2D" uid="uid://0shwwwc0bi5b" path="res://assets/fondo_menu.jpg" id="1_mk4g1"]
 [ext_resource type="Script" uid="uid://fcspv6hwiemu" path="res://scripts/menu_principal.gd" id="1_qcl6i"]
-[ext_resource type="Texture2D" uid="uid://bidqailgm7p1g" path="res://assets/36cb406532ca909724daffd01f08ba27.jpg" id="2_iep14"]
-[ext_resource type="Texture2D" uid="uid://bs4hy1gxead8m" path="res://assets/Code_Generated_Image.png" id="3_iep14"]
-[ext_resource type="Texture2D" uid="uid://8xay81pg5yfd" path="res://assets/images-removebg-preview.png" id="4_w5ui5"]
-[ext_resource type="Texture2D" uid="uid://db04f0ws7crxd" path="res://assets/Gemini_Generated_Image_qroeghqroeghqroe-removebg-preview.png" id="5_qcl6i"]
-[ext_resource type="AudioStream" uid="uid://dugwp0xfgumt7" path="res://data/arpmedia-game-game-music-577822.mp3" id="7_nxt0m"]
-[ext_resource type="Texture2D" uid="uid://ctcr3e67rs3fw" path="res://assets/Gemini_Generated_Image_3jq4c03jq4c03jq4-removebg-preview.png" id="8_2xgxd"]
+[ext_resource type="Texture2D" uid="uid://bidqailgm7p1g" path="res://assets/pergamino_ui.jpg" id="2_iep14"]
+[ext_resource type="Texture2D" uid="uid://bs4hy1gxead8m" path="res://assets/titulo_principal.png" id="3_iep14"]
+[ext_resource type="Texture2D" uid="uid://8xay81pg5yfd" path="res://assets/boton_salir.png" id="4_w5ui5"]
+[ext_resource type="Texture2D" uid="uid://db04f0ws7crxd" path="res://assets/titulo_como_jugar.png" id="5_qcl6i"]
+[ext_resource type="AudioStream" uid="uid://dugwp0xfgumt7" path="res://data/musica_fondo.mp3" id="7_nxt0m"]
+[ext_resource type="Texture2D" uid="uid://ctcr3e67rs3fw" path="res://assets/titulo_ajustes.png" id="8_2xgxd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa1tu"]
 texture = ExtResource("2_iep14")
@@ -46,48 +46,52 @@ expand_mode = 1
 
 [node name="ContenedorBotones" type="VBoxContainer" parent="." unique_id=425485748]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 329.0
-offset_right = 673.0
-offset_bottom = 454.0
-theme_override_constants/separation = 10
+offset_left = 476.0
+offset_top = 305.0
+offset_right = 676.0
+offset_bottom = 455.0
+theme_override_constants/separation = 12
 
 [node name="BotonJugar" type="Button" parent="ContenedorBotones" unique_id=919231400]
-custom_minimum_size = Vector2(150, 35)
+custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.8750814, 0.99382055, 0.8750814, 0.943)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
+theme_override_colors/font_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_hover_color = Color(1, 0.88, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.05, 0.01, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 19
 theme_override_styles/normal = SubResource("StyleBoxTexture_fa1tu")
-text = "JUGAR
-"
+text = "JUGAR"
 
 [node name="BotonComoJugar" type="Button" parent="ContenedorBotones" unique_id=1907277547]
-custom_minimum_size = Vector2(150, 35)
+custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_constants/outline_size = 5
+theme_override_colors/font_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_hover_color = Color(1, 0.88, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.05, 0.01, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 19
 theme_override_styles/normal = SubResource("StyleBoxTexture_kni6g")
-text = "Como Jugar
-"
+text = "CÓMO JUGAR"
 
 [node name="BotonOpciones" type="Button" parent="ContenedorBotones" unique_id=1530380736]
-custom_minimum_size = Vector2(150, 35)
+custom_minimum_size = Vector2(200, 42)
 layout_mode = 2
-theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
+theme_override_colors/font_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_hover_color = Color(1, 0.88, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.05, 0.01, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 19
 theme_override_styles/normal = SubResource("StyleBoxTexture_nx6e2")
-text = "Ajustes
-"
+text = "SONIDO"
 
 [node name="TituloJuego" type="TextureRect" parent="." unique_id=1104950012]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 0
-offset_left = 240.0
-offset_top = 17.000002
-offset_right = 1085.0
-offset_bottom = 178.0
+offset_left = 225.0
+offset_top = 14.0
+offset_right = 1070.0
+offset_bottom = 175.0
 scale = Vector2(0.8319855, 0.8648099)
 texture = ExtResource("3_iep14")
 expand_mode = 1
@@ -138,7 +142,7 @@ offset_right = 412.0
 offset_bottom = 548.0
 scale = Vector2(1.18, 1.08)
 theme_override_colors/default_color = Color(0.05, 0.03, 0.01, 1)
-theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/normal_font_size = 14
 text = "¡BIENVENIDO A DAMAS CHINAS!
 
 1. OBJETIVO (¡CARRERA SIN CAPTURAS!)
@@ -150,14 +154,15 @@ text = "¡BIENVENIDO A DAMAS CHINAS!
 • Finalizar Salto: Pulsa 'Finalizar Salto ✔' o haz clic en tu ficha cuando termines tu cadena.
 
 3. CAJAS DE PREGUNTAS
-• 🌟  Estrellas(50M): Reto de conteo y combinatoria.
-• 🪙 Cultura General (+25 M): Preguntas variadas.
-• 🎁 Cofre Sorpresa: ¡Premio aleatorio entre +120 Monedas, Súper Salto GRATIS o un TURNO EXTRA!
+• 🌟 Estrellas (+50 M): Reto de conteo y combinatoria.
+• 📘 Cultura General (+25 M): Preguntas variadas.
+• 🎁 Cofre Sorpresa: ¡Premio aleatorio entre +120 Monedas, Súper Salto GRATIS o Doble Jugada GRATIS!
 
-4. TIENDA DE PODERES
+4. TIENDA DE PODERES (ACTÍVALOS CUANDO QUIERAS)
 • 🚀 Súper Salto (30 M): Salta hasta 4 casillas de distancia (guías doradas).
-• ⚡ Doble Jugada (45 M): ¡Mueve 2 veces seguidas en el mismo turno para armar y cruzar tus propios puentes!
-• 💡 Comodín 50/50 (20 M): Elimina 2 opciones falsas en una pregunta."
+• ⚡ Doble Jugada (45 M): ¡Mueve 2 veces seguidas en el mismo turno!
+• ❄️ Congelar Rival (35 M): Congela por 1 turno una ficha rival para bloquearla.
+• 💡 Comodín 50/50 (20 M): Elimina 2 opciones falsas al responder una pregunta."
 
 [node name="BotonCerrar" type="Button" parent="VentanaReglas" unique_id=660200260]
 custom_minimum_size = Vector2(30, 35)
@@ -218,9 +223,9 @@ offset_left = 26.787031
 offset_top = 204.28021
 offset_right = 215.78703
 offset_bottom = 232.28021
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.18, 0.09, 0.04, 1)
 theme_override_font_sizes/font_size = 20
-text = "Volumen de Musica"
+text = "Volumen General:"
 
 [node name="SliderVolumen" type="HSlider" parent="VentanaAjustes" unique_id=1221934522]
 custom_minimum_size = Vector2(100, 0)
@@ -237,10 +242,9 @@ offset_left = 32.52711
 offset_top = 308.6901
 offset_right = 185.52711
 offset_bottom = 367.6901
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.18, 0.09, 0.04, 1)
 theme_override_font_sizes/font_size = 20
-text = "Modo de Juegos
-"
+text = "Modo de Juego:"
 
 [node name="OptionModo" type="OptionButton" parent="VentanaAjustes" unique_id=657021036]
 layout_mode = 0
@@ -249,13 +253,13 @@ offset_top = 308.6901
 offset_right = 388.4768
 offset_bottom = 339.6901
 item_count = 4
-popup/item_0/text = "1 vs 1"
+popup/item_0/text = "1 vs 1 (2 Jugadores)"
 popup/item_0/id = 0
-popup/item_1/text = "3 jugadores"
+popup/item_1/text = "3 Jugadores"
 popup/item_1/id = 1
-popup/item_2/text = "4 jugadores"
+popup/item_2/text = "4 Jugadores"
 popup/item_2/id = 2
-popup/item_3/text = "6 jugadores "
+popup/item_3/text = "6 Jugadores"
 popup/item_3/id = 3
 
 [node name="LabelTiempo" type="Label" parent="VentanaAjustes" unique_id=1088043081]
@@ -264,9 +268,9 @@ offset_left = 32.52711
 offset_top = 440.33734
 offset_right = 206.52711
 offset_bottom = 468.33734
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.18, 0.09, 0.04, 1)
 theme_override_font_sizes/font_size = 20
-text = "Tiempo por Turno"
+text = "Tiempo por Turno:"
 
 [node name="OptionTiempo" type="OptionButton" parent="VentanaAjustes" unique_id=2056752531]
 layout_mode = 1
@@ -282,13 +286,13 @@ offset_bottom = 119.242004
 grow_horizontal = 2
 grow_vertical = 2
 item_count = 4
-popup/item_0/text = "Sin Tiempo"
+popup/item_0/text = "15 Segundos"
 popup/item_0/id = 0
-popup/item_1/text = "15 Segundo"
+popup/item_1/text = "30 Segundos"
 popup/item_1/id = 1
-popup/item_2/text = "30 segundos"
+popup/item_2/text = "60 Segundos"
 popup/item_2/id = 2
-popup/item_3/text = "60 segundos"
+popup/item_3/text = "Sin Límite"
 popup/item_3/id = 3
 
 [node name="BotonCreditos" type="Button" parent="VentanaAjustes" unique_id=1914965157]
@@ -301,4 +305,4 @@ offset_top = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
-text = "Creditos"
+text = "Créditos"

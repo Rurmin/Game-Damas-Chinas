@@ -146,7 +146,7 @@ func inicializar_sonidos():
 	sfx_compra = AudioStreamPlayer.new()
 	
 	for reproductor in [sfx_fichasonido, sfx_supersalto, sfx_correcto, sfx_error, sfx_victoria, sfx_congelar, sfx_compra]:
-		reproductor.volume_db = -7.0
+		reproductor.volume_db = -2.5
 		add_child(reproductor)
 
 	if ResourceLoader.exists("res://assets/fichasonido.mp3"):
@@ -382,7 +382,7 @@ func crear_interfaz_juego():
 	canvas.add_child(cont_tiempo)
 
 	var boton_volver = TextureButton.new()
-	boton_volver.texture_normal = load("res://assets/images-removebg-preview.png")
+	boton_volver.texture_normal = load("res://assets/boton_salir.png")
 	boton_volver.ignore_texture_size = true
 	boton_volver.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	boton_volver.custom_minimum_size = Vector2(58, 58)

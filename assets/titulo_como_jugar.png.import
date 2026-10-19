@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0shwwwc0bi5b"
-path="res://.godot/imported/Gemini_Generated_Image_cyydrscyydrscyyd.jpeg-28a29a0cd67aa3dfd64e8287e82a6cb4.ctex"
+uid="uid://db04f0ws7crxd"
+path="res://.godot/imported/titulo_como_jugar.png-390a4393391e0876ed7211e863502d72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gemini_Generated_Image_cyydrscyydrscyyd.jpeg"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_cyydrscyydrscyyd.jpeg-28a29a0cd67aa3dfd64e8287e82a6cb4.ctex"]
+source_file="res://assets/titulo_como_jugar.png"
+dest_files=["res://.godot/imported/titulo_como_jugar.png-390a4393391e0876ed7211e863502d72.ctex"]
 
 [params]
 
